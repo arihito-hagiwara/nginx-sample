@@ -24,9 +24,14 @@ variable "private_subnet_ids" {
 }
 
 variable "allowed_cidr_blocks" {
-  description = "ALBへのHTTPアクセスを許可するCIDR一覧"
+  description = "ALBへのHTTP/HTTPSアクセスを許可するCIDR一覧"
   type        = list(string)
   default     = ["0.0.0.0/0"]
+}
+
+variable "certificate_arn" {
+  description = "ALBのHTTPSリスナーに使うACM証明書のARN"
+  type        = string
 }
 
 variable "container_image" {

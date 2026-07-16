@@ -6,6 +6,11 @@ output "lb_arn" {
   value = aws_lb.nginx.arn
 }
 
+output "lb_zone_id" {
+  description = "Route53 ALIASレコードの作成に使うALBのHosted Zone ID"
+  value       = aws_lb.nginx.zone_id
+}
+
 output "target_group_arn" {
   value = aws_lb_target_group.nginx.arn
 }
